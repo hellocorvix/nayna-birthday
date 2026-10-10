@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Nayna 🎂</title>
+<meta name="description" content="7 saal me pehli dafa waqt par — Ammy ki taraf se Nayna ke liye.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,600&family=Sora:wght@400;600;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#160A2E; --bg2:#241047; --violet:#7C3AED; --lav:#A78BFA; --pink:#EC4899;
+  --gold:#F59E0B; --orange:#EA580C; --ink:#FFF7ED; --soft:#CFC3F2; --card:rgba(255,255,255,.06);
+  --border:rgba(167,139,250,.35);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Sora',system-ui,sans-serif; color:var(--ink); overflow-x:hidden;
+  background:
+    radial-gradient(900px 500px at 85% -5%, rgba(236,72,153,.28), transparent 60%),
+    radial-gradient(800px 600px at -10% 30%, rgba(124,58,237,.35), transparent 60%),
+    radial-gradient(700px 500px at 110% 75%, rgba(245,158,11,.18), transparent 60%),
+    linear-gradient(180deg, var(--bg) 0%, var(--bg2) 55%, var(--bg) 100%);
+  min-height:100vh;
+}
+::selection{background:var(--pink); color:#fff}
+
+/* ---------- ticker ---------- */
+.ticker{background:linear-gradient(90deg,var(--orange),var(--pink),var(--violet)); color:#fff; overflow:hidden; white-space:nowrap; padding:.55rem 0; font-weight:800; font-size:.85rem; letter-spacing:.04em; position:relative; z-index:5}
+.ticker-track{display:inline-block; padding-left:100%; animation:tick 22s linear infinite}
+@keyframes tick{to{transform:translateX(-100%)}}
+
+/* ---------- floating decor ---------- */
+.balloon{position:absolute; border-radius:50% 50% 50% 50%/55% 55% 45% 45%; opacity:.85; animation:floaty 6s ease-in-out infinite; z-index:0; pointer-events:none}
+.balloon::after{content:""; position:absolute; left:50%; top:100%; width:2px; height:56px; background:linear-gradient(rgba(255,255,255,.5),transparent)}
+.b1{width:54px;height:68px;background:radial-gradient(circle at 32% 30%,#F9A8D4,var(--pink)); left:6%; top:120px}
+.b2{width:42px;height:54px;background:radial-gradient(circle at 32% 30%,#FCD34D,var(--gold)); right:8%; top:170px; animation-delay:-2s}
+.b3{width:36px;height:46px;background:radial-gradient(circle at 32% 30%,#C4B5FD,var(--violet)); left:12%; top:430px; animation-delay:-4s}
+.b4{width:48px;height:60px;background:radial-gradient(circle at 32% 30%,#FDA4AF,#E11D48); right:14%; top:520px; animation-delay:-1s}
+@keyframes floaty{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-20px) rotate(2deg)}}
+.sparkle{position:absolute; width:6px;height:6px;border-radius:50%; background:#FDE68A; opacity:.7; animation:tw 2.6s ease-in-out infinite; pointer-events:none}
+@keyframes tw{0%,100%{opacity:.15; transform:scale(.7)}50%{opacity:.95; transform:scale(1.25)}}
+
+/* ---------- layout ---------- */
+.wrap{max-width:860px; margin:0 auto; padding:0 20px; position:relative; z-index:2}
+section{padding:64px 0 8px}
+.glass{background:var(--card); border:1px solid var(--border); border-radius:24px; padding:28px 24px; backdrop-filter:blur(8px); box-shadow:0 24px 60px rgba(0,0,0,.35)}
+h2.sec-title{font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(1.7rem,6vw,2.5rem); text-align:center; margin-bottom:10px}
+.sec-sub{text-align:center; color:var(--soft); margin-bottom:26px; font-size:.98rem}
+
+/* ---------- hero ---------- */
+.hero{min-height:92vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; padding:56px 0 30px; position:relative}
+.pill{display:inline-block; padding:.45rem 1rem; border:1px solid var(--border); border-radius:999px; background:rgba(124,58,237,.18); color:var(--lav); font-weight:600; font-size:.85rem; letter-spacing:.05em; margin-bottom:22px}
+.hero h1{font-family:'Playfair Display',serif; font-weight:900; line-height:.98; font-size:clamp(2.6rem,11vw,5.2rem); letter-spacing:.01em}
+.hero .name{
+  display:block; font-size:clamp(4rem,19vw,9.5rem); line-height:1.02;
+  background:linear-gradient(92deg,var(--gold) 5%,var(--pink) 48%,var(--lav) 95%);
+  -webkit-background-clip:text; background-clip:text; color:transparent;
+  filter:drop-shadow(0 10px 34px rgba(236,72,153,.35));
+}
+.hero p.tag{margin-top:18px; font-size:clamp(1rem,4.4vw,1.3rem); color:var(--soft)}
+.hero p.tag b{color:var(--ink)}
+.btn{
+  margin-top:30px; display:inline-block; border:none; cursor:pointer; min-height:56px;
+  padding:1rem 2.1rem; border-radius:999px; font-family:'Sora',sans-serif; font-weight:800; font-size:1.05rem; color:#fff;
+  background:linear-gradient(92deg,var(--orange),var(--pink) 60%,var(--violet));
+  box-shadow:0 14px 34px rgba(236,72,153,.4); transition:transform .18s ease, box-shadow .18s ease;
+}
+.btn:hover{transform:translateY(-2px) scale(1.02); box-shadow:0 20px 42px rgba(236,72,153,.5)}
+.btn:active{transform:scale(.98)}
+.scroll-hint{margin-top:26px; color:var(--lav); font-size:.85rem; animation:bob 1.8s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---------- case file ---------- */
+.case-rows{display:grid; gap:12px; margin-top:8px}
+.case-row{display:flex; gap:12px; align-items:baseline; background:rgba(0,0,0,.22); border:1px dashed rgba(167,139,250,.4); border-radius:14px; padding:13px 16px}
+.case-row .k{font-weight:800; color:var(--gold); min-width:74px; font-size:.9rem; letter-spacing:.03em}
+.case-row .v{color:var(--ink); font-size:.98rem}
+.counters{display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:22px}
+.counter{background:rgba(0,0,0,.25); border:1px solid var(--border); border-radius:18px; padding:18px 8px; text-align:center}
+.counter .num{font-family:'Playfair Display',serif; font-weight:900; font-size:clamp(1.9rem,8vw,2.9rem); background:linear-gradient(90deg,var(--gold),var(--pink)); -webkit-background-clip:text; background-clip:text; color:transparent}
+.counter .lbl{color:var(--soft); font-size:.8rem; margin-top:4px; line-height:1.35}
+
+/* ---------- cake game ---------- */
+.cake-stage{display:flex; flex-direction:column; align-items:center; padding-top:14px}
+.candles{display:flex; gap:clamp(10px,4vw,22px); align-items:flex-end; height:118px; position:relative; z-index:3}
+.candle{width:16px; border-radius:5px; position:relative; cursor:pointer; -webkit-tap-highlight-color:transparent}
+.candle .stick{width:16px; border-radius:5px; background:repeating-linear-gradient(45deg,#FBCFE8 0 6px,#F472B6 6px 12px); box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}
+.candle .flame{
+  position:absolute; left:50%; top:-30px; width:20px; height:30px; transform:translateX(-50%);
+  background:radial-gradient(circle at 50% 78%, #FFF7CC 0 22%, #FCD34D 40%, #F59E0B 68%, rgba(234,88,12,.0) 76%);
+  border-radius:50% 50% 50% 50%/62% 62% 38% 38%;
+  transform-origin:50% 100%; animation:flick .28s ease-in-out infinite alternate;
+  filter:drop-shadow(0 0 12px rgba(245,158,11,.85));
+}
+@keyframes flick{from{transform:translateX(-50%) scale(1) rotate(-2.5deg)}to{transform:translateX(-50%) scale(1.1,1.18) rotate(2.5deg)}}
+.candle.out .flame{animation:blow .35s ease forwards}
+@keyframes blow{to{transform:translateX(-38%) scale(.2,.05) rotate(24deg); opacity:0}}
+.candle .smoke{position:absolute; left:50%; top:-40px; font-size:15px; opacity:0; transform:translateX(-50%); pointer-events:none}
+.candle.out .smoke{animation:puff 1s ease-out .3s forwards}
+@keyframes puff{0%{opacity:0; transform:translate(-50%,6px) scale(.6)}30%{opacity:.85}100%{opacity:0; transform:translate(-30%,-26px) scale(1.3)}}
+.cake{position:relative; margin-top:-6px; width:min(320px,84vw)}
+.layer{margin:0 auto; border-radius:14px; position:relative; box-shadow:inset 0 -12px 0 rgba(0,0,0,.14), 0 10px 24px rgba(0,0,0,.3)}
+.layer::before{content:""; position:absolute; left:0; right:0; top:0; height:16px; border-radius:14px 14px 8px 8px; background:rgba(255,255,255,.85)}
+.l1{width:56%; height:46px; background:linear-gradient(180deg,#F9A8D4,#EC4899)}
+.l2{width:76%; height:52px; background:linear-gradient(180deg,#C4B5FD,#7C3AED); margin-top:6px}
+.l3{width:96%; height:58px; background:linear-gradient(180deg,#FCD34D,#F59E0B); margin-top:6px}
+.plate{width:112%; margin-left:-6%; height:14px; background:linear-gradient(180deg,#E7E5F5,#9d94c6); border-radius:50%; margin-top:8px; box-shadow:0 14px 26px rgba(0,0,0,.4)}
+.sprinkles{position:absolute; inset:18px 10px 6px; background-image:radial-gradient(circle,#fff 1.6px,transparent 1.8px),radial-gradient(circle,#FDE68A 1.6px,transparent 1.8px),radial-gradient(circle,#A7F3D0 1.6px,transparent 1.8px); background-size:34px 22px,26px 30px,30px 26px; background-position:0 0,8px 6px,16px 2px; opacity:.8; border-radius:10px}
+.progress{text-align:center; margin-top:22px; font-weight:700; color:var(--lav); min-height:1.5em}
+.wish-msg{display:none; text-align:center; margin-top:8px; font-size:1.06rem; color:var(--ink)}
+.wish-msg.show{display:block}
+.btn.small{min-height:48px; padding:.7rem 1.4rem; font-size:.95rem; margin-top:14px}
+
+/* ---------- meter ---------- */
+.meter-wrap{background:rgba(0,0,0,.25); border:1px solid var(--border); border-radius:16px; padding:20px 18px}
+.meter-row{display:flex; justify-content:space-between; font-size:.88rem; color:var(--soft); margin-bottom:8px}
+.meter-row b{color:var(--ink)}
+.meter{height:26px; border-radius:999px; background:rgba(255,255,255,.09); overflow:hidden}
+.meter .fill{height:100%; width:100%; border-radius:999px; background:linear-gradient(90deg,#22C55E,var(--gold),#EF4444); transition:width 2.2s cubic-bezier(.22,.8,.3,1)}
+.meter-cap{text-align:center; color:var(--soft); margin-top:14px; font-size:.94rem}
+
+/* ---------- finale ---------- */
+.letter{font-size:1.05rem; line-height:1.75; color:#F5EFFF}
+.letter p+p{margin-top:14px}
+.sig{font-family:'Caveat',cursive; font-size:1.7rem; color:var(--gold); margin-top:20px; line-height:1.3}
+footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px 44px; line-height:1.7}
+.reveal{will-change:transform,opacity}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001s !important; transition-duration:.001s !important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="ticker" aria-hidden="true"><span class="ticker-track">🚨 BREAKING NEWS 🚨 &nbsp;7 saal me pehli dafa — Ammy ko Nayna ki birthday YAAD AA GAYI! &nbsp;•&nbsp; Experts hairan &nbsp;•&nbsp; Qaum me khushi ki lehar &nbsp;•&nbsp; 🚨 BREAKING NEWS 🚨 &nbsp;7 saal me pehli dafa — Ammy ko Nayna ki birthday YAAD AA GAYI! &nbsp;•&nbsp; Experts hairan &nbsp;•&nbsp; Qaum me khushi ki lehar &nbsp;•&nbsp;</span></div>
+
+<div class="balloon b1"></div><div class="balloon b2"></div><div class="balloon b3"></div><div class="balloon b4"></div>
+<span class="sparkle" style="left:18%;top:210px"></span>
+<span class="sparkle" style="left:82%;top:120px;animation-delay:-1s"></span>
+<span class="sparkle" style="left:66%;top:640px;animation-delay:-.6s"></span>
+<span class="sparkle" style="left:8%;top:900px;animation-delay:-1.7s"></span>
+<span class="sparkle" style="left:90%;top:1150px;animation-delay:-.3s"></span>
+
+<main class="wrap">
+
+  <!-- HERO -->
+  <header class="hero">
+    <span class="pill">10 OCTOBER • OFFICIAL YAAD-AANE KA DIN</span>
+    <h1>HAPPY BIRTHDAY <span class="name">NAYNA</span></h1>
+    <p class="tag">7 saal ki dosti, aur is dafa... <b>waqt par!</b> 😎</p>
+    <button class="btn" id="startBtn" type="button">Shuru karo 🎉</button>
+    <div class="scroll-hint">neeche show baaki hai ↓</div>
+  </header>
+
+  <!-- CASE FILE -->
+  <section id="casefile">
+    <h2 class="sec-title reveal">📂 Official Case File</h2>
+    <p class="sec-sub reveal">Government of Dosti — Confidential (ab nahi)</p>
+    <div class="glass reveal">
+      <div class="case-rows">
+        <div class="case-row"><span class="k">MULZIM</span><span class="v">Ammy — purana date-bhoolne wala</span></div>
+        <div class="case-row"><span class="k">JURM</span><span class="v">7 martaba birthday bhoolna (har saal, bina gap)</span></div>
+        <div class="case-row"><span class="k">SABOOT</span><span class="v">Ye website — khud sab se bara saboot hai</span></div>
+        <div class="case-row"><span class="k">SAZA</span><span class="v">Zindagi bhar ki dosti + har saal waqt par wish. Parole: koi nahi.</span></div>
+      </div>
+      <div class="counters">
+        <div class="counter"><div class="num" data-count="7">0</div><div class="lbl">Saal ki dosti<br>(aur chal rahi hai)</div></div>
+        <div class="counter"><div class="num" data-count="7">0</div><div class="lbl">Missed birthdays<br>(kasam se aakhri)</div></div>
+        <div class="counter"><div class="num">∞</div><div class="lbl">Pyaar<br>(ginna mushkil hai)</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANDLE GAME -->
+  <section id="game">
+    <h2 class="sec-title reveal">Ab candles bujhao, Nayna! 🕯️</h2>
+    <p class="sec-sub reveal">Har flame ko ek ek karke tap karo — saari bujha do, phir magic dekho</p>
+    <div class="glass reveal">
+      <div class="cake-stage">
+        <div class="candles" id="candles"></div>
+        <div class="cake" id="cake">
+          <div class="layer l1"><div class="sprinkles"></div></div>
+          <div class="layer l2"><div class="sprinkles"></div></div>
+          <div class="layer l3"><div class="sprinkles"></div></div>
+          <div class="plate"></div>
+        </div>
+        <p class="progress" id="candleProgress">0 / 7 candles bujhin</p>
+        <p class="wish-msg" id="wishMsg">Wish pakki! ✨ Jo manga hai, wo mile — ye is dost ki dua hai.<br>Happy Birthday, Nayna! 🎂</p>
+        <button class="btn small" id="confettiBtn" type="button" style="display:none">Confetti dobara 🎉</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORGIVENESS METER -->
+  <section id="meter">
+    <h2 class="sec-title reveal">Nayna ka Ghussa Meter 🌡️</h2>
+    <p class="sec-sub reveal">Live report — website ka asar</p>
+    <div class="meter-wrap reveal">
+      <div class="meter-row"><span>Website se pehle: <b>100% 😤</b></span><span>Ab: <b id="meterNow">100%</b></span></div>
+      <div class="meter"><div class="fill" id="meterFill"></div></div>
+      <p class="meter-cap">Ye sab dekh kar ghussa sirf <b>8%</b> reh gaya 😅<br>Baaki 8% agle saal ki advance booking hai.</p>
+    </div>
+  </section>
+
+  <!-- FINALE LETTER -->
+  <section id="letter">
+    <h2 class="sec-title reveal">Ek Sachhi Baat ❤️</h2>
+    <p class="sec-sub reveal">Fun khatam — ab dil se</p>
+    <div class="glass reveal">
+      <div class="letter">
+        <p>7 saal ho gaye, aur tum har mushkil, har khushi me sath rahi ho. Main dates bhool sakta hun, log nahi bhoolta — aur tum un logon me sab se upar ho.</p>
+        <p>Allah tumhein lambi, khushiyon bhari zindagi de. Is saal waqt par hun, aur ye wala record ab tootega nahi.</p>
+        <p><b>Happy Birthday, Nayna! 🎂</b></p>
+        <div class="sig">— Tumhara dost, Ammy<br>(is dafa waqt par 😎)</div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  Banaya gaya bohot pyaar aur thori si sharam ke sath • 10 October 2026<br>
+  Agli reminder: 10 Oct 2027 — is dafa calendar me pehle se set hai 😄
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+<script>
+(function(){
+  "use strict";
+  var PARTY = ['#F59E0B','#EC4899','#7C3AED','#A78BFA','#FFF7ED'];
+
+  function boom(big){
+    if (!window.confetti) return;
+    var opts = { particleCount: big ? 160 : 70, spread: big ? 100 : 60, origin:{ y:.25 }, colors: PARTY, zIndex: 9999 };
+    confetti(opts);
+    if (big){
+      setTimeout(function(){ confetti({ particleCount: 90, angle: 60, spread: 60, origin:{ x:0, y:.4 }, colors: PARTY, zIndex: 9999 }); }, 180);
+      setTimeout(function(){ confetti({ particleCount: 90, angle: 120, spread: 60, origin:{ x:1, y:.4 }, colors: PARTY, zIndex: 9999 }); }, 320);
+    }
+  }
+
+  /* hero button */
+  var startBtn = document.getElementById('startBtn');
+  if (startBtn){
+    startBtn.addEventListener('click', function(){
+      boom(false);
+      var t = document.getElementById('casefile');
+      if (t) t.scrollIntoView({ behavior:'smooth' });
+    });
+  }
+
+  /* GSAP reveals (progressive enhancement only) */
+  if (window.gsap && window.ScrollTrigger){
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray('.reveal').forEach(function(el){
+      gsap.from(el, { y: 44, opacity: 0, duration: .9, ease: 'power3.out',
+        scrollTrigger: { trigger: el, start: 'top 85%' } });
+    });
+  }
+
+  /* counters */
+  var counted = false;
+  function runCounters(){
+    if (counted) return; counted = true;
+    document.querySelectorAll('.num[data-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      var start = null;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / 1100, 1);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var caseEl = document.getElementById('casefile');
+  if ('IntersectionObserver' in window && caseEl){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ runCounters(); io.disconnect(); } });
+    }, { threshold: .3 });
+    io.observe(caseEl);
+  } else { runCounters(); }
+
+  /* candle game */
+  var TOTAL = 7, out = 0;
+  var candlesEl = document.getElementById('candles');
+  var progEl = document.getElementById('candleProgress');
+  var heights = [64, 78, 58, 84, 66, 74, 60];
+  for (var i = 0; i < TOTAL; i++){
+    (function(idx){
+      var c = document.createElement('div');
+      c.className = 'candle';
+      c.setAttribute('role','button');
+      c.setAttribute('aria-label','Candle ' + (idx + 1));
+      var stick = document.createElement('div');
+      stick.className = 'stick';
+      stick.style.height = heights[idx] + 'px';
+      var flame = document.createElement('div');
+      flame.className = 'flame';
+      flame.style.animationDelay = (idx * -0.07) + 's';
+      var smoke = document.createElement('div');
+      smoke.className = 'smoke';
+      smoke.textContent = '💨';
+      c.appendChild(flame); c.appendChild(smoke); c.appendChild(stick);
+      c.addEventListener('click', function(){
+        if (c.classList.contains('out')) return;
+        c.classList.add('out');
+        out++;
+        progEl.textContent = out + ' / ' + TOTAL + ' candles bujhin';
+        if (out === TOTAL){
+          progEl.textContent = 'Saari candles bujh gayin! 🎉';
+          document.getElementById('wishMsg').classList.add('show');
+          var cb = document.getElementById('confettiBtn');
+          cb.style.display = 'inline-block';
+          boom(true);
+        }
+      });
+      candlesEl.appendChild(c);
+    })(i);
+  }
+  var confettiBtn = document.getElementById('confettiBtn');
+  if (confettiBtn) confettiBtn.addEventListener('click', function(){ boom(true); });
+
+  /* forgiveness meter */
+  var meterDone = false;
+  function runMeter(){
+    if (meterDone) return; meterDone = true;
+    var fill = document.getElementById('meterFill');
+    var now = document.getElementById('meterNow');
+    requestAnimationFrame(function(){
+      fill.style.width = '8%';
+      var start = null;
+      function step(ts){
+        if (!start) start = ts;
+        var p = Math.min((ts - start) / 2200, 1);
+        now.textContent = Math.round(100 - 92 * p) + '%';
+        if (p < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  var meterEl = document.getElementById('meter');
+  if ('IntersectionObserver' in window && meterEl){
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if (e.isIntersecting){ runMeter(); io2.disconnect(); } });
+    }, { threshold: .4 });
+    io2.observe(meterEl);
+  } else { runMeter(); }
+})();
+</script>
+</body>
+</html>
