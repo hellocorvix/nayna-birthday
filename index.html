@@ -79,16 +79,42 @@ h2.sec-title{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:
 }
 .hero p.tag{margin-top:18px; font-size:clamp(1rem,4.4vw,1.28rem); color:var(--soft); max-width:620px}
 .hero p.tag b{color:var(--ink)}
+.hero-photo{
+  margin-top:30px; width:min(300px,78vw); border-radius:26px; padding:6px;
+  background:linear-gradient(140deg,var(--cyan),var(--violet),var(--magenta),var(--gold));
+  box-shadow:0 30px 70px rgba(236,72,153,.35), 0 0 0 1px rgba(255,255,255,.15);
+  transform:rotate(-2deg); animation:floaty 7s ease-in-out infinite;
+}
+.hero-photo img{display:block; width:100%; border-radius:21px}
+.hero-photo-cap{margin-top:14px; font-family:'JetBrains Mono',monospace; font-size:.78rem; color:#A5F3FC}
 .btn{
-  margin-top:30px; display:inline-block; border:none; cursor:pointer; min-height:56px;
+  margin-top:26px; display:inline-block; border:none; cursor:pointer; min-height:56px;
   padding:1rem 2.1rem; border-radius:999px; font-family:'Sora',sans-serif; font-weight:800; font-size:1.05rem; color:#fff;
   background:linear-gradient(92deg,var(--cyan),var(--violet) 55%,var(--magenta));
   box-shadow:0 14px 34px rgba(139,92,246,.45); transition:transform .18s ease, box-shadow .18s ease;
 }
 .btn:hover{transform:translateY(-2px) scale(1.02); box-shadow:0 20px 44px rgba(236,72,153,.5)}
 .btn:active{transform:scale(.98)}
-.scroll-hint{margin-top:26px; color:#A5F3FC; font-size:.85rem; animation:bob 1.8s ease-in-out infinite; font-family:'JetBrains Mono',monospace}
+.scroll-hint{margin-top:24px; color:#A5F3FC; font-size:.85rem; animation:bob 1.8s ease-in-out infinite; font-family:'JetBrains Mono',monospace}
 @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+/* ---------- worlds (photo scenes) ---------- */
+.worlds{display:grid; gap:20px}
+@media(min-width:640px){.worlds{grid-template-columns:repeat(3,1fr)}}
+.world{position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--border); box-shadow:0 22px 50px rgba(0,0,0,.45); min-height:340px; display:flex; align-items:flex-end; justify-content:center}
+.world .bgimg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.world .frame{
+  position:relative; z-index:2; width:62%; margin-bottom:52px; border-radius:16px; padding:4px;
+  background:linear-gradient(150deg,#fff,rgba(255,255,255,.35));
+  box-shadow:0 18px 40px rgba(0,0,0,.55); transform:rotate(-2.5deg);
+}
+.world:nth-child(2) .frame{transform:rotate(2deg)}
+.world .frame img{display:block; width:100%; border-radius:12px}
+.world .cap{
+  position:absolute; left:0; right:0; bottom:0; z-index:3; padding:12px 10px; text-align:center;
+  font-weight:700; font-size:.9rem; color:#fff; background:linear-gradient(180deg,transparent,rgba(0,0,0,.78));
+  text-shadow:0 2px 10px rgba(0,0,0,.8);
+}
 
 /* ---------- scan report ---------- */
 .scan-rows{display:grid; gap:12px; margin-top:8px}
@@ -99,6 +125,23 @@ h2.sec-title{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:
 .counter{background:rgba(0,0,0,.3); border:1px solid var(--border); border-radius:18px; padding:18px 8px; text-align:center}
 .counter .num{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:clamp(1.9rem,8vw,2.9rem); background:linear-gradient(90deg,var(--cyan),var(--magenta)); -webkit-background-clip:text; background-clip:text; color:transparent}
 .counter .lbl{color:var(--soft); font-size:.8rem; margin-top:4px; line-height:1.35}
+
+/* ---------- gifts ---------- */
+.gifts{display:grid; gap:14px}
+@media(min-width:640px){.gifts{grid-template-columns:1fr 1fr}}
+.gift{
+  text-align:left; border:1px solid var(--border); border-radius:18px; padding:18px; cursor:pointer; min-height:56px;
+  background:linear-gradient(140deg, rgba(139,92,246,.22), rgba(236,72,153,.14));
+  color:var(--ink); font-family:'Sora',sans-serif; transition:transform .16s ease, box-shadow .16s ease; width:100%;
+}
+.gift:hover{transform:translateY(-2px); box-shadow:0 16px 34px rgba(139,92,246,.35)}
+.gift .g-title{font-weight:800; font-size:1.02rem; display:flex; align-items:center; gap:.55rem}
+.gift .g-msg{display:none; margin-top:10px; color:#EDE9FF; font-size:.95rem; line-height:1.65; font-weight:400}
+.gift.open .g-msg{display:block}
+.gift.open{background:linear-gradient(140deg, rgba(34,211,238,.16), rgba(251,191,36,.12)); border-color:rgba(251,191,36,.55)}
+.gift-count{text-align:center; margin-top:18px; font-family:'JetBrains Mono',monospace; color:#A5F3FC; font-size:.9rem; min-height:1.4em}
+.gift-final{display:none; text-align:center; margin-top:10px; font-size:1.05rem; line-height:1.65; color:var(--ink)}
+.gift-final.show{display:block}
 
 /* ---------- cake game ---------- */
 .cake-stage{display:flex; flex-direction:column; align-items:center; padding-top:14px}
@@ -186,9 +229,66 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
     <span class="pill">🔓 NAYNA OS — NEW VERSION UNLOCKED</span>
     <h1>HAPPY BIRTHDAY <span class="name">NAYNA</span></h1>
     <p class="tag">Level complete! Ek saal aur zyada <b>smart</b>, zyada <b>stylish</b> — aur bilkul waisi hi <b>full-power superstar</b>. 😎</p>
+    <div class="hero-photo"><img src="nayna.jpg" alt="Nayna"></div>
+    <div class="hero-photo-cap">// 100% asli Nayna — no filter needed, kabhi tha hi nahi</div>
     <button class="btn" id="startBtn" type="button">Party shuru karo 🎉</button>
     <div class="scroll-hint">&gt; neeche pura show hai — scroll karo_</div>
   </header>
+
+  <!-- WORLDS -->
+  <section id="worlds">
+    <h2 class="sec-title reveal">Nayna, Teen Duniyaon Mein 🌍</h2>
+    <p class="sec-sub reveal">Jahan bhi jao, chamak tumhari hi hai — jagah badalti hai, tum nahi</p>
+    <div class="worlds reveal">
+      <div class="world">
+        <img class="bgimg" src="bg-neon.jpg" alt="">
+        <div class="frame"><img src="nayna.jpg" alt="Nayna neon party mein"></div>
+        <div class="cap">🎉 Neon Party — jahan tum, wahan roshni</div>
+      </div>
+      <div class="world">
+        <img class="bgimg" src="bg-gold.jpg" alt="">
+        <div class="frame"><img src="nayna.jpg" alt="Nayna golden studio mein"></div>
+        <div class="cap">✨ Golden Studio — star to tum ho hi</div>
+      </div>
+      <div class="world">
+        <img class="bgimg" src="bg-floral.jpg" alt="">
+        <div class="frame"><img src="nayna.jpg" alt="Nayna phoolon ke bagh mein"></div>
+        <div class="cap">👑 Phoolon ka Bagh — shahzadi apne mahal mein</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFTS -->
+  <section id="gifts">
+    <h2 class="sec-title reveal">Tumhare Liye Kuch Khaas 🎁</h2>
+    <p class="sec-sub reveal">Har box ko tap karke kholo — andar tumhare liye kuch likha hai. Ek ek karke, saare kholna!</p>
+    <div class="glass reveal">
+      <div class="gifts">
+        <button class="gift" type="button">
+          <span class="g-title">🎁 Box 1 — Jab tum udas ho</span>
+          <span class="g-msg">To ye box yaad karna: tum akeli nahi ho. Main hamesha majood hon — bas ek message ki doori par. Aur haan, udasi ka official ilaaj cake hai. Khana, phir mujhe bhejna — aadha ghum wese hi khatam ho jayega. 🍰</span>
+        </button>
+        <button class="gift" type="button">
+          <span class="g-title">🎁 Box 2 — Jab tum khush ho</span>
+          <span class="g-msg">To sab se pehli khabar mujhe dena! Tumhari khushi mein meri khushi double ho jati hai. Party pakki — aur bill ki tension bilkul nahi, wo khushi mein wese hi mehsoos nahi hota. 😄</span>
+        </button>
+        <button class="gift" type="button">
+          <span class="g-title">🎁 Box 3 — Jab duniya tang kare</span>
+          <span class="g-msg">To bas naam bhej dena, baaki main dekh lunga. 😎 Tum bas itna hamesha yaad rakhna: tumhare peeche ek dost khara hai — kal bhi tha, aaj bhi hai, aur hamesha rahega. Ye wali guarantee lifetime ki hai.</span>
+        </button>
+        <button class="gift" type="button">
+          <span class="g-title">🎁 Box 4 — Jab neend na aye</span>
+          <span class="g-msg">To overthinking ki jagah ye sochna: is waqt bhi koi tumhare liye dua kar raha hai. Tum neend ki fikar choro — tumhari khairiyat ki fikar karne wala majood hai. 🌙</span>
+        </button>
+        <button class="gift" type="button" style="grid-column:1/-1">
+          <span class="g-title">🎂 Box 5 — Sab se bara box, aaj ke liye</span>
+          <span class="g-msg">Happy Birthday, Nayna! Allah tumhein itni khushiyan de ke ginne ke liye calculator bhi thak jaye. Aur suno — ye dosti koi subscription nahi hai jo expire ho jaye. Ye lifetime wala package hai: main majood tha, majood hon, aur hamesha majood rahunga. ❤️</span>
+        </button>
+      </div>
+      <p class="gift-count" id="giftCount">&gt; 0 / 5 boxes khule_</p>
+      <p class="gift-final" id="giftFinal">Saare boxes khul gaye! 🎉 Ab tumhein official pata chal gaya hai: chahe din jaisa bhi ho — <b>ek dost hamesha majood hai.</b></p>
+    </div>
+  </section>
 
   <!-- AI SCAN REPORT -->
   <section id="scan">
@@ -265,7 +365,7 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
       <div class="letter">
         <p>Dekho Nayna, saal badal gaya — tum bilkul nahi badlin. Ab bhi wahi full-power, full-style, thori si pagal (achi wali pagal 😜).</p>
         <p>7 saal ho gaye is dosti ko. Main dates bhool sakta hun, log nahi bhoolta — aur tum un logon me sab se upar ho. Sach ye hai ke tum jaisi dost naseeb walon ko milti hai.</p>
-        <p>Allah tumhein hamesha aise hi rakhe — hansti hui, chamakti hui, aur sab ki favourite. Cake kaato, wish mango, aur is saal ko apna bana lo.</p>
+        <p>Allah tumhein hamesha aise hi rakhe — hansti hui, chamakti hui, aur sab ki favourite. Cake kaato, wish mango, aur is saal ko apna bana lo. Aur ye hamesha yaad rakhna: jahan tum, wahan tumhara ye dost hamesha majood hai.</p>
         <p><b>Happy Birthday, Superstar! 🎂</b></p>
         <div class="sig">— Tumhara dost, Ammy 😎<br><span style="font-size:1.15rem">(Chief Cake Officer, Nayna Party Department)</span></div>
       </div>
@@ -300,7 +400,7 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
   if (startBtn){
     startBtn.addEventListener('click', function(){
       boom(false);
-      var t = document.getElementById('scan');
+      var t = document.getElementById('gifts');
       if (t) t.scrollIntoView({ behavior:'smooth' });
     });
   }
@@ -312,6 +412,23 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
         scrollTrigger: { trigger: el, start: 'top 85%' } });
     });
   }
+
+  /* gifts */
+  var giftTotal = 5, giftOpened = 0;
+  var giftCountEl = document.getElementById('giftCount');
+  document.querySelectorAll('.gift').forEach(function(g){
+    g.addEventListener('click', function(){
+      if (g.classList.contains('open')) return;
+      g.classList.add('open');
+      giftOpened++;
+      giftCountEl.textContent = '> ' + giftOpened + ' / ' + giftTotal + ' boxes khule_';
+      boom(false);
+      if (giftOpened === giftTotal){
+        document.getElementById('giftFinal').classList.add('show');
+        setTimeout(function(){ boom(true); }, 350);
+      }
+    });
+  });
 
   /* counters */
   var counted = false;
