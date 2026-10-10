@@ -102,7 +102,8 @@ h2.sec-title{font-family:'Space Grotesk',sans-serif; font-weight:700; font-size:
 .worlds{display:grid; gap:20px}
 @media(min-width:640px){.worlds{grid-template-columns:repeat(3,1fr)}}
 .world{position:relative; border-radius:22px; overflow:hidden; border:1px solid var(--border); box-shadow:0 22px 50px rgba(0,0,0,.45); min-height:340px; display:flex; align-items:flex-end; justify-content:center}
-.world .bgimg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover}
+.world .bgimg{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 78%}
+.show-video{width:min(330px,86vw); display:block; margin:0 auto; border-radius:20px; border:1px solid var(--border); box-shadow:0 24px 60px rgba(0,0,0,.5); background:#000}
 .world .frame{
   position:relative; z-index:2; width:62%; margin-bottom:52px; border-radius:16px; padding:4px;
   background:linear-gradient(150deg,#fff,rgba(255,255,255,.35));
@@ -241,18 +242,15 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
     <p class="sec-sub reveal">Jahan bhi jao, chamak tumhari hi hai — jagah badalti hai, tum nahi</p>
     <div class="worlds reveal">
       <div class="world">
-        <img class="bgimg" src="bg-neon.jpg" alt="">
-        <div class="frame"><img src="nayna.jpg" alt="Nayna neon party mein"></div>
+        <img class="bgimg" src="scene-neon.jpg" alt="Nayna neon party scene mein">
         <div class="cap">🎉 Neon Party — jahan tum, wahan roshni</div>
       </div>
       <div class="world">
-        <img class="bgimg" src="bg-gold.jpg" alt="">
-        <div class="frame"><img src="nayna.jpg" alt="Nayna golden studio mein"></div>
+        <img class="bgimg" src="scene-gold.jpg" alt="Nayna golden studio scene mein">
         <div class="cap">✨ Golden Studio — star to tum ho hi</div>
       </div>
       <div class="world">
-        <img class="bgimg" src="bg-floral.jpg" alt="">
-        <div class="frame"><img src="nayna.jpg" alt="Nayna phoolon ke bagh mein"></div>
+        <img class="bgimg" src="scene-floral.jpg" alt="Nayna phoolon ke bagh scene mein">
         <div class="cap">👑 Phoolon ka Bagh — shahzadi apne mahal mein</div>
       </div>
     </div>
@@ -287,6 +285,17 @@ footer{text-align:center; color:var(--soft); font-size:.86rem; padding:56px 20px
       </div>
       <p class="gift-count" id="giftCount">&gt; 0 / 5 boxes khule_</p>
       <p class="gift-final" id="giftFinal">Saare boxes khul gaye! 🎉 Ab tumhein official pata chal gaya hai: chahe din jaisa bhi ho — <b>ek dost hamesha majood hai.</b></p>
+    </div>
+  </section>
+
+  <!-- VIDEO SHOW -->
+  <section id="show">
+    <h2 class="sec-title reveal">Tumhare Liye Ek Chhota Sa Show 🎬</h2>
+    <p class="sec-sub reveal">Sirf 12 second ka hai — sound on karke dekhna 🔊</p>
+    <div class="glass reveal">
+      <video class="show-video" controls playsinline preload="metadata" poster="scene-floral.jpg">
+        <source src="nayna-intro.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 
